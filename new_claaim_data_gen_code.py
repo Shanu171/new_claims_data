@@ -320,7 +320,11 @@ def get_age_based_conditions(age):
     """Determine if condition is chronic based on probabilities"""
     chronic_ratio = CONDITION_MAPPING[condition_category]['chronic_ratio']
     return random.random() < chronic_ratio
-
+def is_chronic_condition(condition_category):
+    """Determine if condition is chronic based on probabilities"""
+    chronic_ratio = CONDITION_MAPPING[condition_category]['chronic_ratio']
+    return random.random() < chronic_ratio
+    
 def generate_claims_data(membership_df, claims_per_member_range=(1, 8), start_year=2018, end_year=2024):
     """Generate claims data for membership table across multiple years"""
     
